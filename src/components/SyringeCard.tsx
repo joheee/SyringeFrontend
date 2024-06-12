@@ -16,9 +16,11 @@ const customStyles = {
   },
 };
 
-export default function SyringeCard({ prop, title }: SyringeCardInterface) {
+export default function SyringeCard({ prop, title, index, device }: SyringeCardInterface) {
   const [percent, setPercent] = useState<number>(100);
   const [modalIsOpen, setIsOpen] = useState(false);
+
+  console.log(device)
 
   useEffect(() => {
     setPercent(Math.floor((prop.volume / 60) * 100));
@@ -46,9 +48,10 @@ export default function SyringeCard({ prop, title }: SyringeCardInterface) {
         contentLabel="Example Modal"
       >
         <div className="flex flex-col items-end p-6 bg-white rounded shadow-lg">
-          <div className="text-2xl font-bold mb-4">
+          <div className="text-4xl font-bold mb-2">
             {title}'s volume is low!
           </div>
+          <div className="text-2xl font-semibold mb-4">{prop.fluid} for patient name {device.user.assignedPerson[index]}</div>
 
           <button
             onClick={closeModal}
@@ -59,12 +62,12 @@ export default function SyringeCard({ prop, title }: SyringeCardInterface) {
         </div>
       </Modal>
 
-      <div className="flex gap-2">
+      <div className="flex gap-2 items-center">
         <div className="text-xl font-bold">{title}</div>
         {percent >= 20 ? null : (
           <img
             src="https://static-00.iconduck.com/assets.00/danger-icon-2048x2048-ey688pf1.png"
-            className="cursor-pointer w-6"
+            className="cursor-pointer w-6 h-6"
             onClick={openModal}
           />
         )}
@@ -78,7 +81,11 @@ export default function SyringeCard({ prop, title }: SyringeCardInterface) {
           running
         </div>
       )}
-      <ProgressBar completed={percent} maxCompleted={100} />
+      <ProgressBar
+        completed={percent}
+        maxCompleted={100}
+        bgColor={percent <= 20 ? "rgb(252 165 165 / 1)" : "rgb(20 184 166 / 1)"}
+      />
       <div className="">
         <div className="">Volume</div>
         <div className="ml-2 text-lg font-bold">{prop.volume} mL</div>

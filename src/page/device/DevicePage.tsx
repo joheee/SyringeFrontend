@@ -25,8 +25,8 @@ export default function DevicePage() {
   }
   async function handleUpdate() {
     const persons = person.split(",").map((name) => name.trim());
-    if (persons.length > 3 || persons.length < 1 || persons[0] === '') {
-      toast.error('there must be 1-3 people!')
+    if (persons.length != 3) {
+      toast.error('there must be 3 people!')
       return
     }
     const updatedData = {
