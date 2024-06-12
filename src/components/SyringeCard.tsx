@@ -63,7 +63,7 @@ export default function SyringeCard({ prop, title }: SyringeCardInterface) {
         <div className="text-xl font-bold">{title}</div>
         {percent >= 20 ? null : (
           <img
-            src="/public/danger.svg"
+            src="https://static-00.iconduck.com/assets.00/danger-icon-2048x2048-ey688pf1.png"
             className="cursor-pointer w-6"
             onClick={openModal}
           />
