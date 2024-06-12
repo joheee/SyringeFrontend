@@ -5,6 +5,8 @@ import { doc, updateDoc } from "firebase/firestore";
 import { db_firestore } from "../../config/FirebaseConnect";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import AuthMiddleware from "../../middleware/AuthMiddleware";
+import Loading from "../../components/Loading";
 
 export default function DevicePage() {
   const { id } = useParams();
@@ -35,8 +37,8 @@ export default function DevicePage() {
       .then(() => {
         console.log("Document successfully updated!");
         toast.success("success update user information");
-        })
-        .catch((error) => {
+      })
+      .catch((error) => {
         toast.error("abort update");
         console.error("Error updating document: ", error);
       });
@@ -65,6 +67,10 @@ export default function DevicePage() {
     bed,
   };
 
-  if (loading) return <div className="">loading</div>;
-  return <DevicePresenter prop={prop} />;
+  if (loading) return <Loading/>
+  return (
+    <AuthMiddleware>
+      <DevicePresenter prop={prop} />;
+    </AuthMiddleware>
+  );
 }

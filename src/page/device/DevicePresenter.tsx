@@ -48,9 +48,9 @@ export default function DevicePresenter({ prop }: DevicePageInterface) {
             </div>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 flex gap-5">
               {/* Replace with your content */}
-              <SyringeCard prop={prop.device.syringe1}/>
-              <SyringeCard prop={prop.device.syringe2}/>
-              <SyringeCard prop={prop.device.syringe3}/>
+              <SyringeCard prop={prop.device.syringe1} title="Syringe 1"/>
+              <SyringeCard prop={prop.device.syringe2} title="Syringe 2"/>
+              <SyringeCard prop={prop.device.syringe3} title="Syringe 3"/>
               {/* /End replace */}
             </div>
           </div>

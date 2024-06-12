@@ -28,19 +28,20 @@ export interface DevicePageInterface {
     setRoom: (e: number) => void;
     setBed: (e: number) => void;
     handleUpdate: () => void;
-    name:string;
-    person:string;
-    room:number;
-    bed:number;
+    name: string;
+    person: string;
+    room: number;
+    bed: number;
   };
 }
 
-export interface SyringeCardInterface{
+export interface SyringeCardInterface {
   prop: {
-    status: boolean,
-    flowrate: number,
-    fluid: string,
-    timeRemaining: number,
-    volume: 15
-  }
+    status: boolean;
+    flowrate: number;
+    fluid: string;
+    timeRemaining: number;
+    volume: 15;
+  };
+  title: string;
 }
