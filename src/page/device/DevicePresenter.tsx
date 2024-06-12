@@ -23,13 +23,13 @@ export default function DevicePresenter({ prop }: DevicePageInterface) {
                 to="/dashboard"
                 className={classNames(
                   "bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900",
-                  "group flex items-center px-2 py-2 text-sm font-medium rounded-md"
+                  "group flex items-center px-2 py-2 text-sm rounded-md font-bold"
                 )}
               >
                 back
               </Link>
               <h1 className="text-2xl font-semibold text-gray-900">
-                {"bang user "}
+                {prop.device.name}
               </h1>
             </div>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">

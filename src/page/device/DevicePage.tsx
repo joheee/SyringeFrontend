@@ -23,7 +23,12 @@ export default function DevicePage() {
   function handleBack() {
     navigate("/dashboard");
   }
-  function handleUpdate() {
+  async function handleUpdate() {
+    const persons = person.split(",").map((name) => name.trim());
+    if (persons.length > 3 || persons.length < 1 || persons[0] === '') {
+      toast.error('there must be 1-3 people!')
+      return
+    }
     const updatedData = {
       user: {
         name: name,
@@ -33,7 +38,7 @@ export default function DevicePage() {
       },
     };
 
-    updateDoc(deviceRef, updatedData)
+    await updateDoc(deviceRef, updatedData)
       .then(() => {
         console.log("Document successfully updated!");
         toast.success("success update user information");

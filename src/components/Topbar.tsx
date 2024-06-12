@@ -7,7 +7,7 @@ const userNavigation = [{ name: "Sign out", href: "/" }];
 
 export default function Topbar() {
   return (
-    <div className="relative z-10 flex-shrink-0 flex h-16 bg-white shadow">
+    <div className="relative z-6 flex-shrink-0 flex h-16 bg-white shadow">
       <button className="px-4 border-r border-gray-200 text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 md:hidden">
         <span className="sr-only">Open sidebar</span>
       </button>
