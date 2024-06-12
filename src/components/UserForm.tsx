@@ -42,7 +42,7 @@ export default function UserForm({prop}: DevicePageInterface) {
             htmlFor="email"
             className="block text-sm font-medium text-warm-gray-900"
           >
-            Assigned Person
+            Assigned Person (comma separated)
           </label>
           <div className="mt-1">
             <input
