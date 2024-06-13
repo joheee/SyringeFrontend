@@ -16,7 +16,7 @@ const customStyles = {
   },
 };
 
-export default function SyringeCard({ prop, title, index, device }: SyringeCardInterface) {
+export default function SyringeCard({ prop, title, device }: SyringeCardInterface) {
   const [percent, setPercent] = useState<number>(100);
   const [modalIsOpen, setIsOpen] = useState(false);
 
@@ -51,7 +51,7 @@ export default function SyringeCard({ prop, title, index, device }: SyringeCardI
           <div className="text-4xl font-bold mb-2">
             {title}'s volume is low!
           </div>
-          <div className="text-2xl font-semibold mb-4">{prop.fluid} for patient name {device.user.assignedPerson[index]}</div>
+          <div className="text-2xl font-semibold mb-4">{prop.fluid} for patient name {device.user.name}</div>
 
           <button
             onClick={closeModal}

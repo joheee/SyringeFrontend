@@ -44,6 +44,5 @@ export interface SyringeCardInterface {
     volume: 15;
   };
   title: string;
-  index: number
   device: DocumentData
 }
