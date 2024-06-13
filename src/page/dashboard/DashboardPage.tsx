@@ -18,9 +18,5 @@ export default function DashboardPage() {
   };
 
   if (loading) return <Loading />;
-  return (
-    <AuthMiddleware>
-      <DashboardPresenter prop={prop} />
-    </AuthMiddleware>
-  );
+  return <DashboardPresenter prop={prop} />;
 }

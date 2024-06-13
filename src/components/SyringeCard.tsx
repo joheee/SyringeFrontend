@@ -20,15 +20,12 @@ export default function SyringeCard({ prop, title, device }: SyringeCardInterfac
   const [percent, setPercent] = useState<number>(100);
   const [modalIsOpen, setIsOpen] = useState(false);
 
-  console.log(device)
-
   useEffect(() => {
     setPercent(Math.floor((prop.volume / 60) * 100));
     if (percent <= 20) {
       toast.error(`${title} fluid is getting low!`);
       setIsOpen(true);
     }
-    console.log(percent);
   }, [percent, prop.volume, title]);
 
   function closeModal() {

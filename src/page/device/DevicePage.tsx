@@ -26,8 +26,8 @@ export default function DevicePage() {
   async function handleUpdate() {
     const persons = person.split(",").map((name) => name.trim());
     if (persons.length != 3) {
-      toast.error('there must be 3 people!')
-      return
+      toast.error("there must be 3 people!");
+      return;
     }
     const updatedData = {
       user: {
@@ -40,7 +40,6 @@ export default function DevicePage() {
 
     await updateDoc(deviceRef, updatedData)
       .then(() => {
-        console.log("Document successfully updated!");
         toast.success("success update user information");
       })
       .catch((error) => {
@@ -72,10 +71,6 @@ export default function DevicePage() {
     bed,
   };
 
-  if (loading) return <Loading/>
-  return (
-    <AuthMiddleware>
-      <DevicePresenter prop={prop} />;
-    </AuthMiddleware>
-  );
+  if (loading) return <Loading />;
+  return <DevicePresenter prop={prop} />;
 }

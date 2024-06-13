@@ -26,9 +26,5 @@ export default function LoginPage() {
     handleLogin,
   };
 
-  return (
-    <AuthMiddleware>
-      <LoginPresenter prop={prop} />;
-    </AuthMiddleware>
-  );
+  return <LoginPresenter prop={prop} />;
 }
