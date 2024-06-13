@@ -5,7 +5,6 @@ import { doc, updateDoc } from "firebase/firestore";
 import { db_firestore } from "../../config/FirebaseConnect";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
-import AuthMiddleware from "../../middleware/AuthMiddleware";
 import Loading from "../../components/Loading";
 
 export default function DevicePage() {

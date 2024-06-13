@@ -4,7 +4,6 @@ import toast from "react-hot-toast";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { db_auth } from "../../config/FirebaseConnect";
 import { useNavigate } from "react-router-dom";
-import AuthMiddleware from "../../middleware/AuthMiddleware";
 
 export default function LoginPage() {
   const [email, setEmail] = useState<string>("");
